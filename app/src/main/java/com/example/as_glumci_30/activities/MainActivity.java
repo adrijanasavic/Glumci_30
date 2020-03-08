@@ -29,6 +29,7 @@ import com.example.as_glumci_30.adapters.MyAdapter;
 import com.example.as_glumci_30.db.DatabaseHelper;
 import com.example.as_glumci_30.db.model.Glumac;
 import com.example.as_glumci_30.dialog.AboutDialog;
+import com.example.as_glumci_30.preferences.SettingsActivity;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 import java.sql.SQLException;
@@ -81,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
                 refresh();
                 break;
             case R.id.settings:
-                // Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
-               //  startActivity(settings);
+                Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(settings);
                 break;
             case R.id.about_dialog:
                 showDialog();
