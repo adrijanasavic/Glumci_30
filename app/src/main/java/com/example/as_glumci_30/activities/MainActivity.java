@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
                 break;
             case R.id.settings:
                 // Intent settings = new Intent(MainActivity.this, SettingsActivity.class);
-                // startActivity(settings);
+               //  startActivity(settings);
                 break;
             case R.id.about_dialog:
                 showDialog();
@@ -292,8 +292,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.OnItemC
     @Override
     public void OnItemClick(int position) {
         Glumac g = adapter.get( position );
-        //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-        // intent.putExtra(GLUMAC_KEY, g.getmId());
-        //startActivity(intent);
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+         intent.putExtra(GLUMAC_KEY, g.getmId());
+        startActivity(intent);
     }
 }
