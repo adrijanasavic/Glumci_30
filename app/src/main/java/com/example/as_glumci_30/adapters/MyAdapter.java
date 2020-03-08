@@ -36,36 +36,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public Glumac get(int position) {
-        return glumac.get(position);
+        return glumac.get( position );
 
     }
 
-    public void clear(){
+    public void clear() {
         glumac.clear();
 
     }
 
-    public void addAll(List<Glumac> glumciList){
+    public void addAll(List<Glumac> glumciList) {
 
-        glumac.addAll(glumciList);
+        glumac.addAll( glumciList );
 
     }
+
     @NonNull
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate( R.layout.single_item, parent, false);
+        View view = LayoutInflater.from( parent.getContext() ).inflate( R.layout.single_item, parent, false );
 
 
-        return new MyAdapter.MyViewHolder(view, listener);
+        return new MyAdapter.MyViewHolder( view, listener );
     }
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
-        holder.tvIme.setText(glumac.get(position).getmIme());
-        holder.tvPrezime.setText(glumac.get(position).getmPrezime());
+        holder.tvIme.setText( glumac.get( position ).getmIme() );
+        holder.tvPrezime.setText( glumac.get( position ).getmPrezime() );
         holder.rbMalaOcena.setRating( glumac.get( position ).getmRating() );
 
 
@@ -86,19 +86,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener vhListener) {
-            super(itemView);
-            tvIme = itemView.findViewById(R.id.tvIme);
-            tvPrezime = itemView.findViewById(R.id.tvPrezime);
+            super( itemView );
+            tvIme = itemView.findViewById( R.id.tvIme );
+            tvPrezime = itemView.findViewById( R.id.tvPrezime );
             rbMalaOcena = itemView.findViewById( R.id.rbMaleOcene );
             this.vhListener = vhListener;
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener( this );
         }
-
 
 
         @Override
         public void onClick(View v) {
-            vhListener.OnItemClick(getAdapterPosition());
+            vhListener.OnItemClick( getAdapterPosition() );
         }
 
 
